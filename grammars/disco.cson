@@ -1,0 +1,96 @@
+'scopeName': 'source.disco'
+'name': 'disco'
+'fileTypes': ['disco']
+
+
+'patterns': [
+
+    {
+      'match': '\\b([0-9]+\\/?[0-9]*)\\b'
+      'name': 'constant.numeric.disco'
+    },
+
+    {
+      'match' : '--+\\s+.*'
+      'name' : 'comment.line.disco'
+    },
+
+    {
+      'name': 'comment.block.disco'
+      'contentName': ''
+      'begin': '\\{--*'
+      'beginCaptures':
+        0: 'name': 'punctuation.definition.disco'
+      'end': '-*\\}'
+      'endCaptures':
+        0: 'name': 'punctuation.definition.disco'
+      'patterns': [{ 'include': '$self' }]
+    },
+
+    {
+      'name': 'meta.case.disco'
+      'contentName': ''
+      'begin': '\\{\\?'
+      'beginCaptures':
+        0: 'name': 'constant.character.disco'
+      'end': '\\?\\}'
+      'endCaptures':
+        0: 'name': 'constant.character.disco'
+      'patterns': [{'include' : '$self'}]
+    },
+
+    {
+      'match' : '(\\|\\|\\|)(\\s?.*)'
+      'captures' :
+        0 : 'name' : 'comment.block.documentation.disco'
+        1 : 'name' : 'markup.italic.disco'
+        2 : 'name' : 'markup.italic.disco'
+
+    },
+
+    {
+      'name' : 'entity.other.disco'
+      'contentName':''
+      'begin' : '(\\!\\!\\!)'
+      'beginCaptures' :
+        1 : 'name' : 'entity.name.tag.disco'
+      'end' : '\\b'
+      'endCaptures' :
+        0 : 'name' : ''
+      'patterns' : [{'include' : '$self'}]
+    },
+
+    {
+      'match' : '(\\b\\w*\\s*):((\\s*(\\w*|->|\\+|\\*|\\s)*)*)'
+      'captures' :
+        0 : 'name' : 'meta.function.disco'
+        1 : 'name' : 'entity.name.function.disco'
+        2 : 'name' : 'entity.name.type.disco'
+
+
+
+
+    },
+    {
+      'match':'\\s*(if|when|otherwise|let|in|is|forall)\\s'
+      'name' : 'keyword.control.disco'
+
+    },
+    {
+      'match':'\\s+(enumerate|count|floor|ceiling|divides|
+      and|or|not|mod|choose|sqrt|implies|
+      lg|true|false|left|right|
+      size|union|U|u|intersect)\\s'
+      'name' : 'support.function.disco'
+    },
+
+    {
+      'match': '(function)\\s+(\\w+)\\s*\\(.*\\)'
+      'captures':
+          '1':
+              'name': 'keyword.control.disco'
+          '2':
+              'name': 'entity.name.function.disco'
+      'name': 'meta.function.disco'
+    },
+]

@@ -1,0 +1,17 @@
+{
+  "name": "language-disco",
+  "version": "0.0.0",
+  "description": "Disco language support in atom",
+  "engines": {
+    "atom": "*"
+  },
+  "dependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ndemeyembosco/language-disco.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ndemeyembosco/language-disco/issues"
+  },
+  "license": "MIT"
+}
