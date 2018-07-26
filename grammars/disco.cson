@@ -72,8 +72,13 @@
 
     },
     {
-      'match':'\\s*(if|when|otherwise|let|in|is|forall)\\s'
+      'match':'\\s*(if|when|otherwise|let|in|is|forall|type)\\s'
       'name' : 'keyword.control.disco'
+
+    },
+    {
+      'match' : '[A-Z].*'
+      'name' : 'entity.name.type.disco'
 
     },
     {
